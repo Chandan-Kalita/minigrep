@@ -11,8 +11,8 @@ impl CmdArgs {
         if args.len() < 3 {
             return Err("not enough arguments");
         }
-        let query = args.get(1).expect("Provide the input query").clone();
-        let file_path = args.get(2).expect("Provide the input file path").clone();
+        let query = args[1].clone();
+        let file_path = args[2].clone();
         let ignore_case = env::var("IGNORE_CASE").is_ok();
         Ok(CmdArgs {
             query,
